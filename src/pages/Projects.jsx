@@ -9,14 +9,30 @@ function Projects({ pageVariants }) {
 
   const projects = [
     {
-      title: 'E-Commerce Platform',
+      title: 'SmartHostel 360',
       description: 'A full-stack e-commerce solution with payment integration, inventory management, and real-time analytics.',
-      tech: ['React', 'Node.js', 'MongoDB', 'Stripe'],
-      github: 'https://github.com',
-      demo: 'https://demo.com',
+      tech: ['HTML', 'CSS', 'JavaScript', 'Node.js', 'Express', 'MySQL'],
+      github: 'https://github.com/jeraldraja30/SmartHostel-360',
+      demo: 'https://github.com/jeraldraja30/SmartHostel-360',
       thumbnail: 'https://via.placeholder.com/400x250/6366f1/ffffff?text=E-Commerce'
     },
+    // {
+    //   title: 'Task Management App',
+    //   description: 'Collaborative task management tool with drag-and-drop, real-time updates, and team collaboration features.',
+    //   tech: ['React', 'TypeScript', 'Firebase', 'Framer Motion'],
+    //   github: 'https://github.com',
+    //   demo: 'https://demo.com',
+    //   thumbnail: 'https://via.placeholder.com/400x250/f5576c/ffffff?text=Task+Manager'
+    // },
     {
+      title: '3D Portfolio Website',
+      description: 'An immersive 3D portfolio website with interactive models, particle systems, and smooth animations.',
+      tech: ['React', 'Three.js', 'Framer Motion', 'GSAP'],
+      github: 'https://github.com/jeraldraja30/Portflolie',
+      demo: 'https://jeraldraja.tech',
+      thumbnail: 'https://via.placeholder.com/400x250/00f2fe/ffffff?text=3D+Portfolio'
+    },
+     {
       title: 'Task Management App',
       description: 'Collaborative task management tool with drag-and-drop, real-time updates, and team collaboration features.',
       tech: ['React', 'TypeScript', 'Firebase', 'Framer Motion'],
@@ -25,37 +41,29 @@ function Projects({ pageVariants }) {
       thumbnail: 'https://via.placeholder.com/400x250/f5576c/ffffff?text=Task+Manager'
     },
     {
-      title: '3D Portfolio Website',
-      description: 'An immersive 3D portfolio website with interactive models, particle systems, and smooth animations.',
-      tech: ['React', 'Three.js', 'Framer Motion', 'GSAP'],
-      github: 'https://github.com',
-      demo: 'https://demo.com',
-      thumbnail: 'https://via.placeholder.com/400x250/00f2fe/ffffff?text=3D+Portfolio'
-    },
-    {
-      title: 'Social Media Dashboard',
+      title: 'DevSphere',
       description: 'Comprehensive analytics dashboard for social media metrics with data visualization and insights.',
-      tech: ['React', 'Python', 'PostgreSQL', 'Chart.js'],
-      github: 'https://github.com',
-      demo: 'https://demo.com',
+      tech: ['Python', 'Django', 'HTML', 'CSS', 'JavaScript', 'Bootstrap', 'MySQL'],
+      github: 'https://github.com/jeraldraja30/Personal_Blogss',
+      demo: 'https://github.com/jeraldraja30/Personal_Blogss',
       thumbnail: 'https://via.placeholder.com/400x250/f093fb/ffffff?text=Dashboard'
     },
-    {
-      title: 'Fitness Tracking App',
-      description: 'Mobile-first fitness tracking application with workout plans, progress tracking, and social features.',
-      tech: ['React Native', 'Node.js', 'MongoDB', 'GraphQL'],
-      github: 'https://github.com',
-      demo: 'https://demo.com',
-      thumbnail: 'https://via.placeholder.com/400x250/4facfe/ffffff?text=Fitness+App'
-    },
-    {
-      title: 'AI Image Generator',
-      description: 'AI-powered image generation tool using machine learning models with style transfer and customization.',
-      tech: ['React', 'Python', 'TensorFlow', 'FastAPI'],
-      github: 'https://github.com',
-      demo: 'https://demo.com',
-      thumbnail: 'https://via.placeholder.com/400x250/764ba2/ffffff?text=AI+Generator'
-    }
+    // {
+    //   title: 'Fitness Tracking App',
+    //   description: 'Mobile-first fitness tracking application with workout plans, progress tracking, and social features.',
+    //   tech: ['React Native', 'Node.js', 'MongoDB', 'GraphQL'],
+    //   github: 'https://github.com',
+    //   demo: 'https://demo.com',
+    //   thumbnail: 'https://via.placeholder.com/400x250/4facfe/ffffff?text=Fitness+App'
+    // },
+    // {
+    //   title: 'AI Image Generator',
+    //   description: 'AI-powered image generation tool using machine learning models with style transfer and customization.',
+    //   tech: ['React', 'Python', 'TensorFlow', 'FastAPI'],
+    //   github: 'https://github.com',
+    //   demo: 'https://demo.com',
+    //   thumbnail: 'https://via.placeholder.com/400x250/764ba2/ffffff?text=AI+Generator'
+    // }
   ]
 
   const containerVariants = {
