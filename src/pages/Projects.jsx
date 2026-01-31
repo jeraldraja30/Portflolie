@@ -10,7 +10,7 @@ function Projects({ pageVariants }) {
   const projects = [
     {
       title: 'SmartHostel 360',
-      description: 'A full-stack e-commerce solution with payment integration, inventory management, and real-time analytics.',
+      description: 'SmartHostel 360 is a modern web-based platform that automates and streamlines daily hostel operations using scalable, secure technologies.',
       tech: ['HTML', 'CSS', 'JavaScript', 'Node.js', 'Express', 'MySQL'],
       github: 'https://github.com/jeraldraja30/SmartHostel-360',
       demo: 'https://github.com/jeraldraja30/SmartHostel-360',
