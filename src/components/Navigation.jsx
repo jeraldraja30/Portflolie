@@ -1,29 +1,40 @@
-import { Link, useLocation } from 'react-router-dom'
 import { motion } from 'framer-motion'
 import { useState, useEffect } from 'react'
+import { useScrollSection } from '../hooks/useScrollSection'
 import './Navigation.css'
 
 const navItems = [
-  { path: '/', label: 'Home' },
-  { path: '/about', label: 'About' },
-  { path: '/skills', label: 'Skills' },
-  { path: '/projects', label: 'Projects' },
-  { path: '/resume', label: 'Resume' },
-  { path: '/coding-profiles', label: 'Profiles' },
-  { path: '/contact', label: 'Contact' }
+  { id: 'home', label: 'Home' },
+  { id: 'about', label: 'About' },
+  { id: 'skills', label: 'Skills' },
+  { id: 'projects', label: 'Projects' },
+  { id: 'resume', label: 'Resume' },
+  { id: 'codingprofiles', label: 'Profiles' },
+  { id: 'contact', label: 'Contact' }
 ]
 
 function Navigation() {
-  const location = useLocation()
+  const { activeSection, scrollToSection } = useScrollSection()
   const [isScrolled, setIsScrolled] = useState(false)
 
   useEffect(() => {
     const handleScroll = () => {
-      setIsScrolled(window.scrollY > 50)
+      const scrollContainer = document.querySelector('.scroll-container')
+      if (scrollContainer) {
+        setIsScrolled(scrollContainer.scrollTop > 50)
+      }
     }
-    window.addEventListener('scroll', handleScroll)
-    return () => window.removeEventListener('scroll', handleScroll)
+
+    const scrollContainer = document.querySelector('.scroll-container')
+    if (scrollContainer) {
+      scrollContainer.addEventListener('scroll', handleScroll, { passive: true })
+      return () => scrollContainer.removeEventListener('scroll', handleScroll)
+    }
   }, [])
+
+  const handleNavClick = (sectionId) => {
+    scrollToSection(sectionId)
+  }
 
   return (
     <motion.nav
@@ -37,23 +48,28 @@ function Navigation() {
           className="nav-logo"
           whileHover={{ scale: 1.1 }}
           whileTap={{ scale: 0.95 }}
+          onClick={() => scrollToSection('home')}
+          style={{ cursor: 'pointer' }}
         >
-          <Link to="/">Portfolio</Link>
+          Portfolio
         </motion.div>
-        
+
         <ul className="nav-links">
           {navItems.map((item) => (
-            <li key={item.path}>
-              <Link to={item.path} className={location.pathname === item.path ? 'active' : ''}>
+            <li key={item.id}>
+              <button
+                onClick={() => handleNavClick(item.id)}
+                className={activeSection === item.id ? 'active' : ''}
+              >
                 {item.label}
-                {location.pathname === item.path && (
+                {activeSection === item.id && (
                   <motion.div
                     className="nav-indicator"
                     layoutId="nav-indicator"
                     transition={{ type: 'spring', stiffness: 380, damping: 30 }}
                   />
                 )}
-              </Link>
+              </button>
             </li>
           ))}
         </ul>

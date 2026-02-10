@@ -3,7 +3,7 @@ import { useRef } from 'react'
 import { Github, ExternalLink, Code2 } from 'lucide-react'
 import './Projects.css'
 
-function Projects({ pageVariants }) {
+function Projects() {
   const ref = useRef(null)
   const isInView = useInView(ref, { once: true, amount: 0.2 })
 
@@ -32,7 +32,7 @@ function Projects({ pageVariants }) {
       demo: 'https://jeraldraja.tech',
       thumbnail: 'https://via.placeholder.com/400x250/00f2fe/ffffff?text=3D+Portfolio'
     },
-     {
+    {
       title: 'Task Management App',
       description: 'Collaborative task management tool with drag-and-drop, real-time updates, and team collaboration features.',
       tech: ['React', 'TypeScript', 'Firebase', 'Framer Motion'],
@@ -92,13 +92,10 @@ function Projects({ pageVariants }) {
   return (
     <motion.div
       className="projects-page"
-      variants={pageVariants}
-      initial="initial"
-      animate="animate"
-      exit="exit"
+      data-section="projects"
     >
       <div className="projects-overlay"></div>
-      
+
       <div className="projects-container" ref={ref}>
         <motion.h1
           className="projects-title"
@@ -108,7 +105,7 @@ function Projects({ pageVariants }) {
         >
           My <span className="gradient-text">Projects</span>
         </motion.h1>
-        
+
         <motion.div
           className="projects-grid"
           variants={containerVariants}
@@ -150,11 +147,11 @@ function Projects({ pageVariants }) {
                   </motion.a>
                 </div>
               </div>
-              
+
               <div className="project-content">
                 <h3 className="project-title">{project.title}</h3>
                 <p className="project-description">{project.description}</p>
-                
+
                 <div className="project-tech">
                   {project.tech.map((tech) => (
                     <span key={tech} className="tech-tag">

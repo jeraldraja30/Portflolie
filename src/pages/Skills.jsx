@@ -3,7 +3,7 @@ import { useRef } from 'react'
 import { Code2, Database, Palette, Smartphone, Cloud, Cpu } from 'lucide-react'
 import './Skills.css'
 
-function Skills({ pageVariants }) {
+function Skills() {
   const ref = useRef(null)
   const isInView = useInView(ref, { once: true, amount: 0.1 })
 
@@ -86,10 +86,7 @@ function Skills({ pageVariants }) {
   return (
     <motion.div
       className="skills-page"
-      variants={pageVariants}
-      initial="initial"
-      animate="animate"
-      exit="exit"
+      data-section="skills"
     >
       <div className="skills-overlay"></div>
 

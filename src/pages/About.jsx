@@ -6,7 +6,7 @@ import SocialLinks from '../components/SocialLinks'
 import './About.css'
 import ProfilePhoto from '../assets/profile-photo.jpg'
 
-function About({ pageVariants }) {
+function About() {
   const ref = useRef(null)
   const isInView = useInView(ref, { once: true, amount: 0.3 })
 
@@ -39,37 +39,34 @@ function About({ pageVariants }) {
     { icon: Award, title: 'Secure Coding', description: 'Aware of OWASP Top 10 vulnerabilities and secure application practices' }
   ]
 
-//   const highlights = [
-//   {
-//     icon: Code,
-//     title: 'Full Stack Developer',
-//     description: 'Skilled in HTML, CSS, JavaScript, Node.js (Express), Java, and MySQL'
-//   },
-//   {
-//     icon: Target,
-//     title: 'DSA & Problem Solving',
-//     description: 'Strong foundation in data structures, algorithms, DFS, BFS, and optimization'
-//   },
-//   {
-//     icon: Rocket,
-//     title: 'Project-Based Learning',
-//     description: 'Built end-to-end web applications and management systems with real use cases'
-//   },
-//   {
-//     icon: Shield,
-//     title: 'Secure Coding',
-//     description: 'Aware of OWASP Top 10 vulnerabilities and secure application practices'
-//   }
-// ];
+  //   const highlights = [
+  //   {
+  //     icon: Code,
+  //     title: 'Full Stack Developer',
+  //     description: 'Skilled in HTML, CSS, JavaScript, Node.js (Express), Java, and MySQL'
+  //   },
+  //   {
+  //     icon: Target,
+  //     title: 'DSA & Problem Solving',
+  //     description: 'Strong foundation in data structures, algorithms, DFS, BFS, and optimization'
+  //   },
+  //   {
+  //     icon: Rocket,
+  //     title: 'Project-Based Learning',
+  //     description: 'Built end-to-end web applications and management systems with real use cases'
+  //   },
+  //   {
+  //     icon: Shield,
+  //     title: 'Secure Coding',
+  //     description: 'Aware of OWASP Top 10 vulnerabilities and secure application practices'
+  //   }
+  // ];
 
 
   return (
     <motion.div
       className="about-page"
-      variants={pageVariants}
-      initial="initial"
-      animate="animate"
-      exit="exit"
+      data-section="about"
     >
       <div className="about-overlay"></div>
 
@@ -113,12 +110,12 @@ function About({ pageVariants }) {
               <p className="about-bio">
                 On the frontend, I have experience with HTML, CSS, and JavaScript, focusing on clean UI design and usability. On the backend, I have worked with Node.js (Express) and Java, along with MySQL for database design and management. I am familiar with RESTful APIs, CRUD operations, authentication, and server-side logic.
               </p>
-               <p className="about-bio">
+              <p className="about-bio">
                 I have a strong foundation in Data Structures and Algorithms, with experience in arrays, linked lists, stacks, queues, trees, graphs, recursion, and common problem-solving techniques such as DFS, BFS, and hashing. This helps me write optimized and reliable code.
-                </p>
-                <p className="about-bio">
+              </p>
+              <p className="about-bio">
                 I also follow secure coding practices, with awareness of OWASP Top 10 vulnerabilities. I am seeking an entry-level Full Stack Developer role to grow as a software professional.
-                </p>
+              </p>
               <div className="about-skills-preview">
                 <span>React</span>
                 <span>Django</span>

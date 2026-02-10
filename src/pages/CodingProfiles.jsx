@@ -69,13 +69,14 @@ function CodingProfiles({ pageVariants }) {
   return (
     <motion.div
       className="coding-profiles-page"
+      data-section="codingprofiles"
       variants={pageVariants}
       initial="initial"
       animate="animate"
       exit="exit"
     >
       <div className="coding-profiles-overlay"></div>
-      
+
       <div className="coding-profiles-container" ref={ref}>
         <motion.h1
           className="coding-profiles-title"
@@ -85,7 +86,7 @@ function CodingProfiles({ pageVariants }) {
         >
           Coding <span className="gradient-text">Profiles</span>
         </motion.h1>
-        
+
         <motion.div
           className="coding-profiles-grid"
           variants={containerVariants}
@@ -102,8 +103,8 @@ function CodingProfiles({ pageVariants }) {
                 rel="noopener noreferrer"
                 className="coding-profile-card"
                 variants={itemVariants}
-                whileHover={{ 
-                  scale: 1.1, 
+                whileHover={{
+                  scale: 1.1,
                   rotate: 5,
                   y: -10
                 }}
@@ -131,11 +132,11 @@ function CodingProfiles({ pageVariants }) {
                     }}
                   />
                 </motion.div>
-                
+
                 <h3 className="profile-name">{profile.name}</h3>
                 <p className="profile-stats">{profile.stats}</p>
                 <p className="profile-description">{profile.description}</p>
-                
+
                 <motion.div
                   className="profile-glow"
                   initial={{ opacity: 0 }}

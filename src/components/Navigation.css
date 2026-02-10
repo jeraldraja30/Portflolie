@@ -26,14 +26,14 @@
   align-items: center;
 }
 
-.nav-logo a {
+.nav-logo {
   font-size: 1.5rem;
   font-weight: 700;
   background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
-  text-decoration: none;
+  cursor: pointer;
 }
 
 .nav-links {
@@ -47,18 +47,21 @@
   position: relative;
 }
 
-.nav-links a {
+.nav-links button {
   color: var(--text-secondary);
-  text-decoration: none;
+  background: none;
+  border: none;
   font-size: 0.95rem;
   font-weight: 500;
   transition: color 0.3s ease;
   position: relative;
   padding: 0.5rem 0;
+  cursor: pointer;
+  font-family: inherit;
 }
 
-.nav-links a:hover,
-.nav-links a.active {
+.nav-links button:hover,
+.nav-links button.active {
   color: var(--text-primary);
 }
 
@@ -90,13 +93,12 @@
   .nav-links {
     display: none;
   }
-  
+
   .nav-mobile-toggle {
     display: flex;
   }
-  
+
   .nav-container {
     padding: 0 1rem;
   }
 }
-

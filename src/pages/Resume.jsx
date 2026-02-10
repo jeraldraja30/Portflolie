@@ -32,19 +32,19 @@ function Resume({ pageVariants }) {
   //   }
   // ]
   const experiences = [
-  {
-    icon: Briefcase,
-    title: 'Python Full Stack Development Intern',
-    company: 'Jorim Technology Solutions',
-    period: 'Nov 2025 – Jan 2026',
-    location: 'Pammal, Chennai',
-    description: [
-  'Built full-stack modules using Django (MTV), HTML, CSS, JavaScript, and PostgreSQL, reducing manual admin work by 30% through automation.',
-  'Created secure REST APIs with Django REST Framework using JWT/Token authentication for reliable CRUD operations.',
-  'Integrated React with Django using Axios/Fetch and Git/GitHub workflows, cutting repeated UI code by 40% with reusable components.'
-]
-  }
-];
+    {
+      icon: Briefcase,
+      title: 'Python Full Stack Development Intern',
+      company: 'Jorim Technology Solutions',
+      period: 'Nov 2025 – Jan 2026',
+      location: 'Pammal, Chennai',
+      description: [
+        'Built full-stack modules using Django (MTV), HTML, CSS, JavaScript, and PostgreSQL, reducing manual admin work by 30% through automation.',
+        'Created secure REST APIs with Django REST Framework using JWT/Token authentication for reliable CRUD operations.',
+        'Integrated React with Django using Axios/Fetch and Git/GitHub workflows, cutting repeated UI code by 40% with reusable components.'
+      ]
+    }
+  ];
 
 
   // const education = [
@@ -57,26 +57,27 @@ function Resume({ pageVariants }) {
   // ]
 
   const education = [
-  {
-    icon: GraduationCap,
-    degree: 'B.Tech in Computer Science and Business Systems',
-    school: 'Rajalakshmi Institute of Technology',
-    location: 'Chennai',
-    period: 'Sep 2022 – May 2027'
-  },
-  {
-    icon: GraduationCap,
-    degree: 'Higher Secondary Education',
-    school: 'Montfort Matric Higher Secondary School',
-    location: 'Tindivanam',
-    period: 'Jun 2022 – Apr 2023'
-  }
-];
+    {
+      icon: GraduationCap,
+      degree: 'B.Tech in Computer Science and Business Systems',
+      school: 'Rajalakshmi Institute of Technology',
+      location: 'Chennai',
+      period: 'Sep 2022 – May 2027'
+    },
+    {
+      icon: GraduationCap,
+      degree: 'Higher Secondary Education',
+      school: 'Montfort Matric Higher Secondary School',
+      location: 'Tindivanam',
+      period: 'Jun 2022 – Apr 2023'
+    }
+  ];
 
 
   return (
     <motion.div
       className="resume-page"
+      data-section="resume"
       variants={pageVariants}
       initial="initial"
       animate="animate"
@@ -147,7 +148,15 @@ function Resume({ pageVariants }) {
                       <h3>{exp.title}</h3>
                       <h4>{exp.company}</h4>
                       <span className="timeline-period">{exp.period}</span>
-                      <p>{exp.description}</p>
+                      {Array.isArray(exp.description) ? (
+                        <ul className="description-list">
+                          {exp.description.map((item, i) => (
+                            <li key={i}>{item}</li>
+                          ))}
+                        </ul>
+                      ) : (
+                        <p>{exp.description}</p>
+                      )}
                     </div>
                   </motion.div>
                 )

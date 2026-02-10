@@ -5,7 +5,7 @@ import emailjs from '@emailjs/browser'
 import SocialLinks from '../components/SocialLinks'
 import './Contact.css'
 
-function Contact({ pageVariants }) {
+function Contact() {
   const ref = useRef(null)
   const formRef = useRef(null)
   const isInView = useInView(ref, { once: true, amount: 0.3 })
@@ -83,13 +83,10 @@ function Contact({ pageVariants }) {
   return (
     <motion.div
       className="contact-page"
-      variants={pageVariants}
-      initial="initial"
-      animate="animate"
-      exit="exit"
+      data-section="contact"
     >
       <div className="contact-overlay"></div>
-      
+
       <div className="contact-container" ref={ref}>
         <motion.h1
           className="contact-title"
@@ -99,7 +96,7 @@ function Contact({ pageVariants }) {
         >
           Get In <span className="gradient-text">Touch</span>
         </motion.h1>
-        
+
         <motion.div
           className="contact-content"
           variants={containerVariants}
@@ -109,10 +106,10 @@ function Contact({ pageVariants }) {
           <motion.div className="contact-info" variants={itemVariants}>
             <h2>Let's Work Together</h2>
             <p>
-              I'm always open to discussing new projects, creative ideas, or opportunities 
+              I'm always open to discussing new projects, creative ideas, or opportunities
               to be part of your vision. Feel free to reach out!
             </p>
-            
+
             <div className="contact-details">
               <motion.div
                 className="contact-detail"
@@ -124,7 +121,7 @@ function Contact({ pageVariants }) {
                   <p>jeraldrajakala2006@gmail.com</p>
                 </div>
               </motion.div>
-              
+
               <motion.div
                 className="contact-detail"
                 whileHover={{ scale: 1.05, x: 10 }}
@@ -135,7 +132,7 @@ function Contact({ pageVariants }) {
                   <p>+91 9965637023</p>
                 </div>
               </motion.div>
-              
+
               <motion.div
                 className="contact-detail"
                 whileHover={{ scale: 1.05, x: 10 }}
@@ -147,12 +144,12 @@ function Contact({ pageVariants }) {
                 </div>
               </motion.div>
             </div>
-            
+
             <div style={{ marginTop: '2rem' }}>
               <SocialLinks />
             </div>
           </motion.div>
-          
+
           <motion.form
             ref={formRef}
             className="contact-form"
@@ -175,7 +172,7 @@ function Contact({ pageVariants }) {
                 className="form-input"
               />
             </motion.div>
-            
+
             <motion.div
               className="form-group"
               initial={{ opacity: 0, x: 50 }}
@@ -192,7 +189,7 @@ function Contact({ pageVariants }) {
                 className="form-input"
               />
             </motion.div>
-            
+
             <motion.div
               className="form-group"
               initial={{ opacity: 0, x: 50 }}
@@ -209,7 +206,7 @@ function Contact({ pageVariants }) {
                 className="form-textarea"
               />
             </motion.div>
-            
+
             {submitStatus === 'success' && (
               <motion.div
                 className="submit-status success"
@@ -219,7 +216,7 @@ function Contact({ pageVariants }) {
                 Message sent successfully!
               </motion.div>
             )}
-            
+
             {submitStatus === 'error' && (
               <motion.div
                 className="submit-status error"
@@ -229,7 +226,7 @@ function Contact({ pageVariants }) {
                 Failed to send message. Please try again.
               </motion.div>
             )}
-            
+
             <motion.button
               type="submit"
               className="submit-button"
