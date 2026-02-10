@@ -16,14 +16,14 @@ function CodingProfiles({ pageVariants }) {
       stats: '100+ Problems Solved',
       description: 'Practice data structures and algorithms'
     },
-    {
-      name: 'HackerRank',
-      icon: Target,
-      url: 'https://hackerrank.com',
-      color: '#00ea64',
-      stats: '30+ Certificates',
-      description: 'Competitive programming challenges'
-    },
+    // {
+    //   name: 'HackerRank',
+    //   icon: Target,
+    //   url: 'https://hackerrank.com',
+    //   color: '#00ea64',
+    //   stats: '30+ Certificates',
+    //   description: 'Competitive programming challenges'
+    // },
     {
       name: 'skillrack',
       icon: TrendingUp,

@@ -29,7 +29,22 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  background-color: var(--bg-primary);
+
+  /* Global dark blue gradient background */
+  background: linear-gradient(135deg,
+      #0f1419 0%,
+      /* Dark navy */
+      #0a1628 25%,
+      /* Deep blue-navy */
+      #0d1b2a 50%,
+      /* Dark teal-blue */
+      #1b263b 75%,
+      /* Charcoal blue */
+      #0f1419 100%
+      /* Dark navy */
+    );
+  background-attachment: fixed;
+
   color: var(--text-primary);
   overflow: hidden;
   /* Prevent body scrolling */

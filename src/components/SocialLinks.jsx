@@ -6,8 +6,8 @@ const socialLinks = [
   { name: 'LinkedIn', icon: Linkedin, url: 'https://www.linkedin.com/in/rajajerald/', color: '#0077b5' },
   { name: 'GitHub', icon: Github, url: 'https://github.com/jeraldraja30', color: '#ffffff' },
   { name: 'Instagram', icon: Instagram, url: 'https://instagram.com/jeraldraja_2006?igshid=OGQ5ZDc2ODk=', color: '#e4405f' },
-  { name: 'YouTube', icon: Youtube, url: 'https://youtube.com', color: '#ff0000' },
-  { name: 'Twitter', icon: Twitter, url: 'https://twitter.com', color: '#1da1f2' }
+  // { name: 'YouTube', icon: Youtube, url: 'https://youtube.com', color: '#ff0000' },
+  // { name: 'Twitter', icon: Twitter, url: 'https://twitter.com', color: '#1da1f2' }
 ]
 
 function SocialLinks({ variant = 'default' }) {
@@ -50,12 +50,11 @@ function SocialLinks({ variant = 'default' }) {
             rel="noopener noreferrer"
             className="social-link"
             variants={itemVariants}
-            whileHover={{ 
-              scale: 1.2, 
-              rotateZ: 360,
-              y: -5
+            whileHover={{
+              scale: 1.1,
+              y: -3
             }}
-            whileTap={{ scale: 0.9 }}
+            whileTap={{ scale: 0.95 }}
             style={{
               '--social-color': social.color
             }}

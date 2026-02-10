@@ -3,7 +3,6 @@
   min-height: 100vh;
   padding: 8rem 2rem 4rem;
   overflow: hidden;
-  background: linear-gradient(135deg, #0a0a0a 0%, #1a1a2e 100%);
 }
 
 .contact-overlay {
@@ -48,7 +47,7 @@
   color: var(--text-primary);
 }
 
-.contact-info > p {
+.contact-info>p {
   font-size: 1.1rem;
   line-height: 1.8;
   color: var(--text-secondary);
@@ -198,13 +197,12 @@
   .contact-page {
     padding: 6rem 1rem 2rem;
   }
-  
+
   .contact-title {
     margin-bottom: 2rem;
   }
-  
+
   .contact-form {
     padding: 2rem 1.5rem;
   }
 }
-

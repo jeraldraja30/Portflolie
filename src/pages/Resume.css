@@ -1,15 +1,19 @@
+/* Import Modern Font */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
+
 .resume-page {
   position: relative;
   min-height: 100vh;
-  padding: 8rem 2rem 4rem;
+  padding: 6rem 2rem 4rem;
   overflow: hidden;
-  background: linear-gradient(135deg, #0a0a0a 0%, #1a1a2e 100%);
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
 }
 
 .resume-overlay {
   position: absolute;
   inset: 0;
-  background: radial-gradient(circle at 50% 30%, rgba(99, 102, 241, 0.1), transparent 70%);
+  /* Reduced opacity for subtle effect */
+  background: radial-gradient(circle at 50% 30%, rgba(99, 102, 241, 0.05), transparent 70%);
   z-index: 0;
 }
 
@@ -22,17 +26,18 @@
 
 .resume-header {
   text-align: center;
-  margin-bottom: 4rem;
+  margin-bottom: 3.5rem;
 }
 
 .resume-title {
-  font-size: clamp(3rem, 6vw, 5rem);
+  font-size: clamp(2.5rem, 5vw, 4rem);
   font-weight: 800;
-  margin-bottom: 2rem;
+  margin-bottom: 1.5rem;
+  letter-spacing: -0.5px;
 }
 
 .gradient-text {
-  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  background: linear-gradient(135deg, #06b6d4 0%, #3b82f6 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
@@ -40,25 +45,26 @@
 
 .download-button {
   position: relative;
-  padding: 1rem 2.5rem;
-  font-size: 1.1rem;
+  padding: 0.875rem 2rem;
+  font-size: 1rem;
   font-weight: 600;
   border: none;
-  border-radius: 50px;
+  border-radius: 8px;
   cursor: pointer;
-  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  background: linear-gradient(135deg, #06b6d4 0%, #3b82f6 100%);
   color: white;
   display: inline-flex;
   align-items: center;
-  gap: 0.75rem;
-  box-shadow: 0 5px 20px rgba(99, 102, 241, 0.4);
+  gap: 0.5rem;
+  box-shadow: 0 4px 20px rgba(6, 182, 212, 0.25);
   transition: all 0.3s ease;
-  overflow: hidden;
   text-decoration: none;
+  font-family: 'Inter', sans-serif;
 }
 
 .download-button:hover:not(:disabled) {
-  box-shadow: 0 10px 30px rgba(99, 102, 241, 0.6);
+  box-shadow: 0 6px 30px rgba(6, 182, 212, 0.4);
+  transform: translateY(-2px);
 }
 
 .download-button:disabled {
@@ -66,148 +72,174 @@
   cursor: not-allowed;
 }
 
-.button-glow {
-  position: absolute;
-  inset: -20px;
-  background: radial-gradient(circle, rgba(255, 255, 255, 0.3), transparent);
-  border-radius: 50px;
-  filter: blur(20px);
-  z-index: -1;
-}
-
+/* Resume Content Grid */
 .resume-content {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 4rem;
+  gap: 3rem;
+  align-items: start;
 }
 
 .resume-section {
-  background: rgba(255, 255, 255, 0.05);
+  /* Lighter card background */
+  background: rgba(255, 255, 255, 0.03);
   backdrop-filter: blur(10px);
-  border: 1px solid rgba(255, 255, 255, 0.1);
-  border-radius: 20px;
-  padding: 2.5rem;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 12px;
+  padding: 2rem;
+  /* Subtle shadow instead of heavy outline */
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
 }
 
 .section-title {
   display: flex;
   align-items: center;
-  gap: 1rem;
-  font-size: 2rem;
+  gap: 0.75rem;
+  font-size: 1.75rem;
   font-weight: 700;
   margin-bottom: 2rem;
-  color: var(--text-primary);
+  color: #ffffff;
 }
 
 .section-title svg {
-  color: #6366f1;
+  color: #06b6d4;
 }
 
+/* Timeline Improvements */
 .timeline {
   position: relative;
-  padding-left: 3rem;
+  padding-left: 2.5rem;
 }
 
 .timeline::before {
   content: '';
   position: absolute;
-  left: 1rem;
-  top: 0;
+  left: 0.75rem;
+  top: 0.5rem;
   bottom: 0;
-  width: 2px;
-  background: linear-gradient(180deg, #6366f1, #764ba2);
+  width: 1px;
+  /* Thinner timeline line */
+  background: linear-gradient(180deg, #06b6d4, rgba(6, 182, 212, 0.3));
 }
 
 .timeline-item {
   position: relative;
-  margin-bottom: 2.5rem;
-  padding-left: 2rem;
+  margin-bottom: 2rem;
+  padding-left: 1.5rem;
+}
+
+.timeline-item:last-child {
+  margin-bottom: 0;
 }
 
 .timeline-icon {
   position: absolute;
-  left: -2.5rem;
+  left: -2rem;
   top: 0;
-  width: 3rem;
-  height: 3rem;
+  width: 2.5rem;
+  height: 2.5rem;
   display: flex;
   align-items: center;
   justify-content: center;
-  background: rgba(99, 102, 241, 0.2);
-  border: 2px solid #6366f1;
+  background: rgba(6, 182, 212, 0.15);
+  border: 2px solid #06b6d4;
   border-radius: 50%;
-  color: #6366f1;
+  color: #06b6d4;
   z-index: 1;
 }
 
+/* Typography Hierarchy */
 .timeline-content h3 {
-  font-size: 1.3rem;
+  font-size: 1.125rem;
   font-weight: 600;
-  margin-bottom: 0.5rem;
-  color: var(--text-primary);
+  margin-bottom: 0.25rem;
+  color: #ffffff;
+  line-height: 1.4;
 }
 
 .timeline-content h4 {
-  font-size: 1.1rem;
-  font-weight: 500;
-  color: var(--text-secondary);
+  font-size: 1rem;
+  font-weight: 400;
+  color: #94a3b8;
   margin-bottom: 0.5rem;
+  line-height: 1.4;
 }
 
 .timeline-period {
   display: inline-block;
-  padding: 0.3rem 0.8rem;
-  background: rgba(99, 102, 241, 0.1);
-  border: 1px solid rgba(99, 102, 241, 0.3);
-  border-radius: 15px;
-  font-size: 0.85rem;
-  color: #6366f1;
+  padding: 0.25rem 0.75rem;
+  background: rgba(6, 182, 212, 0.1);
+  border: 1px solid rgba(6, 182, 212, 0.25);
+  border-radius: 12px;
+  font-size: 0.8rem;
+  font-weight: 500;
+  color: #06b6d4;
   margin-bottom: 1rem;
 }
 
 .timeline-content p {
-  color: var(--text-secondary);
-  line-height: 1.6;
+  color: #cbd5e1;
+  line-height: 1.8;
+  font-size: 0.95rem;
 }
 
+/* Bullet Points with Better Spacing */
 .timeline-content .description-list {
-  margin: 1rem 0 0 1rem;
-  padding-left: 0.5rem;
+  margin: 0.75rem 0 0 0;
+  padding-left: 0;
   list-style-type: none;
 }
 
 .timeline-content .description-list li {
   position: relative;
-  color: var(--text-secondary);
-  line-height: 1.8;
-  margin-bottom: 0.75rem;
-  padding-left: 1.5rem;
+  color: #cbd5e1;
+  line-height: 2;
+  margin-bottom: 0.5rem;
+  padding-left: 1.25rem;
+  font-size: 0.95rem;
+}
+
+.timeline-content .description-list li:last-child {
+  margin-bottom: 0;
 }
 
 .timeline-content .description-list li::before {
   content: '▹';
   position: absolute;
   left: 0;
-  color: #6366f1;
+  top: 0;
+  color: #06b6d4;
   font-weight: bold;
-  font-size: 1.2rem;
+  font-size: 1.1rem;
 }
 
-
+/* Responsive Design */
 @media (max-width: 968px) {
   .resume-content {
     grid-template-columns: 1fr;
-    gap: 2rem;
+    gap: 2.5rem;
+  }
+
+  .resume-section {
+    padding: 1.75rem;
   }
 }
 
 @media (max-width: 768px) {
   .resume-page {
-    padding: 6rem 1rem 2rem;
+    padding: 5rem 1.5rem 3rem;
   }
 
   .resume-title {
-    margin-bottom: 1.5rem;
+    margin-bottom: 1.25rem;
+  }
+
+  .resume-header {
+    margin-bottom: 2.5rem;
+  }
+
+  .section-title {
+    font-size: 1.5rem;
   }
 
   .timeline {
@@ -220,7 +252,26 @@
 
   .timeline-icon {
     left: -1.75rem;
-    width: 2.5rem;
-    height: 2.5rem;
+    width: 2.25rem;
+    height: 2.25rem;
+  }
+
+  .timeline-item {
+    padding-left: 1.25rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .resume-page {
+    padding: 4.5rem 1rem 2.5rem;
+  }
+
+  .resume-section {
+    padding: 1.5rem;
+  }
+
+  .download-button {
+    padding: 0.75rem 1.75rem;
+    font-size: 0.95rem;
   }
 }

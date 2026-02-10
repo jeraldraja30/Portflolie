@@ -3,7 +3,6 @@
   min-height: 100vh;
   padding: 8rem 2rem 4rem;
   overflow: hidden;
-  background: linear-gradient(135deg, #0a0a0a 0%, #1a1a2e 100%);
 }
 
 .coding-profiles-overlay {
@@ -128,18 +127,17 @@
   .coding-profiles-page {
     padding: 6rem 1rem 2rem;
   }
-  
+
   .coding-profiles-grid {
     grid-template-columns: 1fr;
     gap: 2rem;
   }
-  
+
   .coding-profiles-title {
     margin-bottom: 2rem;
   }
-  
+
   .coding-profile-card {
     padding: 2rem 1.5rem;
   }
 }
-

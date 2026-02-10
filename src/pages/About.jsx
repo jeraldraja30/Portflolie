@@ -4,7 +4,7 @@ import { useRef } from 'react'
 import { Award, Target, Rocket, Code } from 'lucide-react'
 import SocialLinks from '../components/SocialLinks'
 import './About.css'
-import ProfilePhoto from '../assets/profile-photo.jpg'
+import ProfilePhoto from '../assets/profile-photo11.jpg'
 
 function About() {
   const ref = useRef(null)
@@ -105,16 +105,13 @@ function About() {
 
             <motion.div className="about-text" variants={itemVariants}>
               <p className="about-bio">
-                I am a motivated Full Stack Developer with hands-on experience in building responsive, secure, and scalable web applications. I enjoy developing complete end-to-end solutions and solving problems using structured and efficient approaches.
+                I am a motivated Full Stack Developer with hands-on experience in building simple, responsive, and secure web applications. I have worked with HTML, CSS, and JavaScript for frontend development, and Node.js (Express), Java, and MySQL for backend development.
               </p>
               <p className="about-bio">
-                On the frontend, I have experience with HTML, CSS, and JavaScript, focusing on clean UI design and usability. On the backend, I have worked with Node.js (Express) and Java, along with MySQL for database design and management. I am familiar with RESTful APIs, CRUD operations, authentication, and server-side logic.
+                I understand REST APIs, basic CRUD operations, and backend logic. I also have a good understanding of Data Structures and Algorithms such as arrays, linked lists, stacks, queues, trees, graphs, and basic problem-solving techniques like DFS and BFS.
               </p>
               <p className="about-bio">
-                I have a strong foundation in Data Structures and Algorithms, with experience in arrays, linked lists, stacks, queues, trees, graphs, recursion, and common problem-solving techniques such as DFS, BFS, and hashing. This helps me write optimized and reliable code.
-              </p>
-              <p className="about-bio">
-                I also follow secure coding practices, with awareness of OWASP Top 10 vulnerabilities. I am seeking an entry-level Full Stack Developer role to grow as a software professional.
+                I follow basic secure coding practices and am familiar with common web security issues. I am looking for an entry-level Full Stack Developer role where I can learn, grow, and contribute to real-world projects.
               </p>
               <div className="about-skills-preview">
                 <span>React</span>

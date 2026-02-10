@@ -100,31 +100,20 @@ function Resume({ pageVariants }) {
             href="/Raja_jerald__Resume_pdf.pdf"
             download="Raja_Jerald_Resume.pdf"
             className="download-button"
-            whileHover={{ scale: 1.05, boxShadow: '0 10px 30px rgba(99, 102, 241, 0.5)' }}
+            whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
           >
-            <Download size={24} />
+            <Download size={20} />
             Download Resume
-            <motion.div
-              className="button-glow"
-              animate={{
-                scale: [1, 1.2, 1],
-                opacity: [0.5, 0.8, 0.5]
-              }}
-              transition={{
-                repeat: Infinity,
-                duration: 2
-              }}
-            />
           </motion.a>
         </motion.div>
 
         <div className="resume-content">
           <motion.section
             className="resume-section"
-            initial={{ opacity: 0, x: -50 }}
-            animate={isInView ? { opacity: 1, x: 0 } : {}}
-            transition={{ duration: 0.6, delay: 0.2 }}
+            initial={{ opacity: 0, y: 30 }}
+            animate={isInView ? { opacity: 1, y: 0 } : {}}
+            transition={{ duration: 0.7, delay: 0.2 }}
           >
             <h2 className="section-title">
               <Briefcase size={28} />
@@ -166,9 +155,9 @@ function Resume({ pageVariants }) {
 
           <motion.section
             className="resume-section"
-            initial={{ opacity: 0, x: 50 }}
-            animate={isInView ? { opacity: 1, x: 0 } : {}}
-            transition={{ duration: 0.6, delay: 0.4 }}
+            initial={{ opacity: 0, y: 30 }}
+            animate={isInView ? { opacity: 1, y: 0 } : {}}
+            transition={{ duration: 0.7, delay: 0.35 }}
           >
             <h2 className="section-title">
               <GraduationCap size={28} />
