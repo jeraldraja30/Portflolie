@@ -12,7 +12,7 @@ function Hero() {
   const { scrollToSection } = useScrollSection()
 
   // Typing animation state
-  const roles = ['Frontend Developer', 'Backend Developer', 'Full Stack Developer', 'Software Engineer']
+  const roles = ['Full Stack Developer', 'Frontend Developer', 'Backend Developer', 'Software Engineer']
   const [currentRole, setCurrentRole] = useState('')
   const [roleIndex, setRoleIndex] = useState(0)
   const [charIndex, setCharIndex] = useState(0)
@@ -106,8 +106,8 @@ function Hero() {
 
           <motion.div className="hero-buttons" variants={itemVariants}>
             <motion.a
-              href="/Raja_jerald__Resume_pdf.pdf"
-              download="Raja_Jerald_Resume.pdf"
+              href="/Raja_Jerald_G_Resume.pdf"
+              download="Raja_Jerald_GResume.pdf"
               className="btn-primary"
               whileHover={{ scale: 1.03 }}
               whileTap={{ scale: 0.98 }}

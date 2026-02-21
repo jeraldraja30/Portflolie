@@ -276,27 +276,35 @@
 @media (max-width: 768px) {
   .hero-container {
     grid-template-columns: 1fr;
-    gap: 3rem;
-    padding: 2rem 1.5rem;
+    gap: 2rem;
+    padding: 6rem 1.5rem 2rem;
+    /* Added padding-top to clear the fixed header */
     text-align: center;
+    min-height: auto;
+    justify-content: flex-start;
   }
 
   .hero-left {
     align-items: center;
     order: 2;
+    margin-top: 1rem;
   }
 
   .hero-right {
     order: 1;
+    margin-top: 1rem;
   }
 
   .hero-bio {
     max-width: 100%;
+    font-size: 1rem;
+    padding: 0 0.5rem;
   }
 
   .hero-buttons {
     justify-content: center;
     width: 100%;
+    margin-top: 1.5rem;
   }
 
   .btn-primary,
@@ -307,8 +315,8 @@
   }
 
   .profile-image-wrapper {
-    width: clamp(200px, 60vw, 300px);
-    height: clamp(200px, 60vw, 300px);
+    width: clamp(180px, 50vw, 250px);
+    height: clamp(180px, 50vw, 250px);
   }
 }
 

@@ -16,6 +16,7 @@ const navItems = [
 function Navigation() {
   const { activeSection, scrollToSection } = useScrollSection()
   const [isScrolled, setIsScrolled] = useState(false)
+  const [isOpen, setIsOpen] = useState(false)
 
   useEffect(() => {
     const handleScroll = () => {
@@ -34,11 +35,16 @@ function Navigation() {
 
   const handleNavClick = (sectionId) => {
     scrollToSection(sectionId)
+    setIsOpen(false)
+  }
+
+  const toggleMenu = () => {
+    setIsOpen(!isOpen)
   }
 
   return (
     <motion.nav
-      className={`navigation ${isScrolled ? 'scrolled' : ''}`}
+      className={`navigation ${isScrolled ? 'scrolled' : ''} ${isOpen ? 'nav-open' : ''}`}
       initial={{ y: -100 }}
       animate={{ y: 0 }}
       transition={{ duration: 0.5 }}
@@ -46,15 +52,18 @@ function Navigation() {
       <div className="nav-container">
         <motion.div
           className="nav-logo"
-          whileHover={{ scale: 1.1 }}
-          whileTap={{ scale: 0.95 }}
-          onClick={() => scrollToSection('home')}
+          whileHover={{ scale: 1.05 }}
+          whileTap={{ scale: 0.9 }}
+          onClick={() => {
+            scrollToSection('home')
+            setIsOpen(false)
+          }}
           style={{ cursor: 'pointer' }}
         >
           Portfolio
         </motion.div>
 
-        <ul className="nav-links">
+        <ul className={`nav-links ${isOpen ? 'active' : ''}`}>
           {navItems.map((item) => (
             <li key={item.id}>
               <button
@@ -74,11 +83,15 @@ function Navigation() {
           ))}
         </ul>
 
-        <div className="nav-mobile-toggle">
-          <span></span>
-          <span></span>
-          <span></span>
-        </div>
+        <motion.div
+          className="nav-mobile-toggle"
+          onClick={toggleMenu}
+          whileTap={{ scale: 0.9 }}
+        >
+          <span className={isOpen ? 'top rotate' : 'top'}></span>
+          <span className={isOpen ? 'mid hide' : 'mid'}></span>
+          <span className={isOpen ? 'bot rotate' : 'bot'}></span>
+        </motion.div>
       </div>
     </motion.nav>
   )

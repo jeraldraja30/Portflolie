@@ -91,14 +91,75 @@
 
 @media (max-width: 768px) {
   .nav-links {
-    display: none;
+    position: fixed;
+    top: 0;
+    right: -100%;
+    width: 100%;
+    height: 100vh;
+    background: rgba(10, 10, 10, 0.95);
+    backdrop-filter: blur(20px);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 3rem;
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    z-index: 999;
+  }
+
+  .nav-links.active {
+    right: 0;
+  }
+
+  .nav-links button {
+    font-size: 1.5rem;
+    font-weight: 600;
   }
 
   .nav-mobile-toggle {
     display: flex;
+    z-index: 1001;
+    width: 30px;
+    height: 20px;
+    justify-content: space-between;
+  }
+
+  .nav-mobile-toggle span {
+    width: 100%;
+    height: 2px;
+    background: var(--text-primary);
+    transition: all 0.3s ease;
+    transform-origin: left center;
+  }
+
+  .nav-mobile-toggle span.rotate:nth-child(1) {
+    transform: rotate(45deg);
+    width: 26px;
+  }
+
+  .nav-mobile-toggle span.hide {
+    opacity: 0;
+    transform: translateX(10px);
+  }
+
+  .nav-mobile-toggle span.rotate:nth-child(3) {
+    transform: rotate(-45deg);
+    width: 26px;
   }
 
   .nav-container {
-    padding: 0 1rem;
+    padding: 0 1.5rem;
+  }
+}
+
+/* Fix for touch targets and tap feedback */
+@media (max-width: 480px) {
+
+  .nav-links button,
+  .nav-logo {
+    padding: 12px;
+    min-height: 44px;
+    display: flex;
+    align-items: center;
   }
 }
