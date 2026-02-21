@@ -3,7 +3,7 @@ import { useRef } from 'react'
 import { Github, ExternalLink, Code2, ArrowUpRight } from 'lucide-react'
 import './Projects.css'
 
-import portfolioImg from '../assets/portfolio1.png'
+import portfolioImg from '../assets/portfolio.png'
 import smartHostelImg from '../assets/SmartHostel 360.png'
 import devSphereImg from '../assets/DevSphere.png'
 import taskManagementImg from '../assets/task management.png'
