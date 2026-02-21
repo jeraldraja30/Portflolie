@@ -1,7 +1,13 @@
 import { motion, useInView } from 'framer-motion'
 import { useRef } from 'react'
-import { Github, ExternalLink, Code2 } from 'lucide-react'
+import { Github, ExternalLink, Code2, ArrowUpRight } from 'lucide-react'
 import './Projects.css'
+
+import portfolioImg from '../assets/portfolio.png'
+import smartHostelImg from '../assets/SmartHostel 360.png'
+import devSphereImg from '../assets/DevSphere.png'
+import taskManagementImg from '../assets/task management.png'
+import crmImg from '../assets/crm.png'
 
 function Projects() {
   const ref = useRef(null)
@@ -14,31 +20,24 @@ function Projects() {
       tech: ['HTML', 'CSS', 'JavaScript', 'Node.js', 'Express', 'MySQL'],
       github: 'https://github.com/jeraldraja30/SmartHostel-360',
       demo: 'https://github.com/jeraldraja30/SmartHostel-360',
-      thumbnail: 'https://via.placeholder.com/400x250/6366f1/ffffff?text=E-Commerce'
+      image: smartHostelImg
     },
-    // {
-    //   title: 'Task Management App',
-    //   description: 'Collaborative task management tool with drag-and-drop, real-time updates, and team collaboration features.',
-    //   tech: ['React', 'TypeScript', 'Firebase', 'Framer Motion'],
-    //   github: 'https://github.com',
-    //   demo: 'https://demo.com',
-    //   thumbnail: 'https://via.placeholder.com/400x250/f5576c/ffffff?text=Task+Manager'
-    // },
     {
       title: '3D Portfolio Website',
       description: 'An immersive 3D portfolio website with interactive models, particle systems, and smooth animations.',
       tech: ['React', 'Three.js', 'Framer Motion', 'GSAP'],
       github: 'https://github.com/jeraldraja30/Portflolie',
       demo: 'https://jeraldraja.tech',
-      thumbnail: 'https://via.placeholder.com/400x250/00f2fe/ffffff?text=3D+Portfolio'
+      image: portfolioImg,
+      featured: true
     },
     {
       title: 'Task Management App',
       description: 'Collaborative task management tool with drag-and-drop, real-time updates, and team collaboration features.',
       tech: ['React', 'TypeScript', 'Firebase', 'Framer Motion'],
-      github: 'https://github.com',
-      demo: 'https://demo.com',
-      thumbnail: 'https://via.placeholder.com/400x250/f5576c/ffffff?text=Task+Manager'
+      github: 'https://github.com/jeraldraja30/Task-Management-App',
+      demo: 'https://github.com/jeraldraja30/Task-Management-App',
+      image: taskManagementImg
     },
     {
       title: 'DevSphere',
@@ -46,24 +45,16 @@ function Projects() {
       tech: ['Python', 'Django', 'HTML', 'CSS', 'JavaScript', 'Bootstrap', 'MySQL'],
       github: 'https://github.com/jeraldraja30/Personal_Blogss',
       demo: 'https://github.com/jeraldraja30/Personal_Blogss',
-      thumbnail: 'https://via.placeholder.com/400x250/f093fb/ffffff?text=Dashboard'
+      image: devSphereImg
     },
-    // {
-    //   title: 'Fitness Tracking App',
-    //   description: 'Mobile-first fitness tracking application with workout plans, progress tracking, and social features.',
-    //   tech: ['React Native', 'Node.js', 'MongoDB', 'GraphQL'],
-    //   github: 'https://github.com',
-    //   demo: 'https://demo.com',
-    //   thumbnail: 'https://via.placeholder.com/400x250/4facfe/ffffff?text=Fitness+App'
-    // },
-    // {
-    //   title: 'AI Image Generator',
-    //   description: 'AI-powered image generation tool using machine learning models with style transfer and customization.',
-    //   tech: ['React', 'Python', 'TensorFlow', 'FastAPI'],
-    //   github: 'https://github.com',
-    //   demo: 'https://demo.com',
-    //   thumbnail: 'https://via.placeholder.com/400x250/764ba2/ffffff?text=AI+Generator'
-    // }
+    {
+      title: 'CRM (Customer Relationship Management System)',
+      description: 'Developed a Customer Relationship Management system to streamline client interactions, task tracking, and team collaboration with real-time updates and an intuitive drag-and-drop interface.',
+      tech: ['React', 'Django', 'mysql', 'Restapi'],
+      github: 'https://github.com/jeraldraja30/CRM-',
+      demo: 'https://github.com/jeraldraja30/CRM-',
+      image: crmImg
+    },
   ]
 
   const containerVariants = {
@@ -115,15 +106,30 @@ function Projects() {
           {projects.map((project, index) => (
             <motion.div
               key={project.title}
-              className="project-card"
+              className={`project-card ${project.image ? 'has-image' : ''} ${project.featured ? 'featured' : ''}`}
               variants={itemVariants}
               whileHover={{ y: -10, scale: 1.02 }}
               transition={{ type: 'spring', stiffness: 300 }}
             >
+              {/* Background Image Layer */}
               <div className="project-thumbnail">
-                <div className="project-image-placeholder">
-                  <Code2 size={60} />
-                </div>
+                {project.image ? (
+                  <>
+                    <img
+                      src={project.image}
+                      alt={project.title}
+                      className="project-thumbnail-image"
+                      loading="lazy"
+                    />
+                    <div className="project-image-gradient"></div>
+                  </>
+                ) : (
+                  <div className="project-image-placeholder">
+                    <Code2 size={60} />
+                  </div>
+                )}
+
+                {/* Hover Overlay with Links */}
                 <div className="project-overlay">
                   <motion.a
                     href={project.github}
@@ -148,8 +154,9 @@ function Projects() {
                 </div>
               </div>
 
+              {/* Content Layer */}
               <div className="project-content">
-                <h3 className="project-title">{project.title}</h3>
+                <h3 className="project-name">{project.title}</h3>
                 <p className="project-description">{project.description}</p>
 
                 <div className="project-tech">
@@ -159,6 +166,19 @@ function Projects() {
                     </span>
                   ))}
                 </div>
+
+                {project.image && (
+                  <motion.a
+                    href={project.demo}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="project-view-btn"
+                    whileHover={{ scale: 1.05, x: 5 }}
+                    whileTap={{ scale: 0.95 }}
+                  >
+                    View Project <ArrowUpRight size={18} />
+                  </motion.a>
+                )}
               </div>
             </motion.div>
           ))}
@@ -169,4 +189,3 @@ function Projects() {
 }
 
 export default Projects
-
