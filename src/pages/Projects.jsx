@@ -6,8 +6,8 @@ import './Projects.css'
 import portfolioImg from '../assets/portfolio.png'
 import smartHostelImg from '../assets/SmartHostel 360.png'
 import devSphereImg from '../assets/DevSphere.png'
-import taskManagementImg from '../assets/task management.png'
-import crmImg from '../assets/crm.png'
+import taskManagementImg from '../assets/task-management.png'
+import crmImg from '../assets/CRM.png'
 
 function Projects() {
   const ref = useRef(null)
