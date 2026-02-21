@@ -83,6 +83,7 @@
   border-radius: 50%;
   filter: blur(20px);
   z-index: -1;
+  will-change: transform, opacity;
 }
 
 .about-text {

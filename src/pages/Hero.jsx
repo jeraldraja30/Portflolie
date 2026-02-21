@@ -9,6 +9,7 @@ import './Hero.css'
 function Hero() {
   const ref = useRef(null)
   const isInView = useInView(ref, { once: true, amount: 0.3 })
+  const isVisible = useInView(ref, { amount: 0.1 }) // Tracks if currently on screen
   const { scrollToSection } = useScrollSection()
 
   // Typing animation state
@@ -19,6 +20,8 @@ function Hero() {
   const [isDeleting, setIsDeleting] = useState(false)
 
   useEffect(() => {
+    if (!isVisible) return // Pause typing animation when off-screen
+
     const typingSpeed = isDeleting ? 50 : 100 // Very slow typing
     const pauseBeforeDelete = 3000 // Pause before deleting
     const pauseBeforeNext = 500 // Pause before typing next
@@ -46,7 +49,7 @@ function Hero() {
     }, typingSpeed)
 
     return () => clearTimeout(timer)
-  }, [charIndex, isDeleting, roleIndex, roles])
+  }, [charIndex, isDeleting, roleIndex, roles, isVisible])
 
   const containerVariants = {
     hidden: { opacity: 0 },
@@ -143,6 +146,7 @@ function Hero() {
               src={profilePhoto}
               alt="Raja Jerald"
               className="profile-image"
+              decoding="async"
             />
           </div>
         </motion.div>

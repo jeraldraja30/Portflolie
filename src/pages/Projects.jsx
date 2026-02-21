@@ -120,6 +120,7 @@ function Projects() {
                       alt={project.title}
                       className="project-thumbnail-image"
                       loading="lazy"
+                      decoding="async"
                     />
                     <div className="project-image-gradient"></div>
                   </>

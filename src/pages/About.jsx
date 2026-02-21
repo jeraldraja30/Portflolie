@@ -88,6 +88,8 @@ function About() {
                   src={ProfilePhoto}
                   alt="Profile"
                   className="profile-img"
+                  loading="lazy"
+                  decoding="async"
                 />
               </div>
               <motion.div
