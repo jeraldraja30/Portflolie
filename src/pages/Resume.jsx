@@ -97,8 +97,8 @@ function Resume({ pageVariants }) {
           </motion.h1>
 
           <motion.a
-            href="/Raja_jerald__Resume_pdf.pdf"
-            download="Raja_Jerald_Resume.pdf"
+            href="/Raja_Jerald_G_Resume.pdf"
+            download="Raja_Jerald_G_Resume.pdf"
             className="download-button"
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
